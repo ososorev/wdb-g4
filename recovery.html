@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Авторизация</title>
+		<title>востановление пароля</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
 	</head>
@@ -22,21 +22,15 @@
     <article>
       <div class="mainform">
         <p class="headline">
-         Вход
+         Востановление пароля
         </p>
         <form metod="post">
-          <p><input autocomplete="off" required  placeholder="Email" type="text" name="email"></p>
-          <p><input autocomplete="off" required placeholder="Пароль" type="text" name="password"></p>
-          <p><button formaction="handler.php" value="log_in" name="button" type="submit">Войти</button></p>
-          <p class="checked"><input checked type="checkbox" name="remember"> запомнить меня 
-            <a class="indent" href="recovery.html"> Забыли пароль? </a> </p>
+          <p><input autocomplete="off" required  placeholder="Введите Email" type="text" name="email"></p>
+          <p><button formaction="handler.php" value="log_in" name="button" type="submit">Сбросить пароль</button></p>
+          <p  class="checked">Уже есть аккаунт? 
+            <a href="log_in.html"> Выполните вход </a> </p> <br>
         </form>
-        <div><br><br>
-          <p Class="medium_text"> Еще не с нами? <a Class="medium_text" href="index.html"> Зарегистрируйтесь</a></p>
-          <br>
-        </div>
-       
-      </div>
+       </div>
     </article>
 	
 	</body>
