@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="reg.css">
+		<title>Прокат-СЕРВИС</title>
+	<script>
+		function sendData() {
+			var a = parseInt(document.getElementById('email').value);
+  		                var action = document.getElementById('btn1').value;
+			alert("fdfd");
+		}
+		function f1{
+			alert('sw');
+//			let myObj = document.getElementById('email');
+//			myObj.style.borderBottom = '1px solid #A4A6A9';  
+		}
+	</script>
+
+
+	</head>
+	<body>
+	        <header>
+		<div class="subscribe">Подпишись!</div>
+		<div class="social"><img src="twit.svg"></div>
+		<div class="social"><img src="YouTube.svg"></div>
+		<div class="social"><img src="face.svg"></div>
+
+	        </header>
+	        <main>
+		<div class="top_menu">
+			<div class="logo"></div>
+		</div>
+		<div class="content">
+			<div class="fields">
+				<div class="login_caption">Регистрация</div>
+				<form name='myform' class="needs-validation"  novalidate>
+					<div style="margin-bottom: 14px;">
+						<input id="email" type="text" name="mail"  class="form-control"  onfocus="f1"  placeholder="Email" style="width: 263px;" required/>
+							<div id = "first-feedback" class="invalid-feedback">
+								Введите Email.
+							</div>
+					</div>
+					<div style="margin-bottom: 14px;"><input id="btn1" type="submit" name="btn" class="form-control" style="width: 263px;"value="Зарегистрироваться" required/></div>
+					<div class="rememder">
+						<div><input id="chb1" type="checkbox" name="saveme"/></div>
+						<div><label for="chb1">Запомнить меня.</label></div>
+						<div class="recovery">Забыли пароль?</div>
+					</div>
+				</form>
+				<div class="condition">Регистрируясь, Вы подтверждаете, что принимаете <span class="politik">Условия пользования</span> и <span class="politik">Политику конфиденциальности</span></div>
+				<div class="registration">Вы уже имеете аккаунт? <span class="login">Выполить вход</span></div>
+			</div>
+		</div>
+	        </main>
+    <script>
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                   
+                  if (form.checkValidity() === true) {
+                    sendData();
+	}                          
+	else{
+		let myObj = document.getElementById('email');
+		myObj.style.borderBottom = '1px solid #C43269';  
+	}
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+    </script>       
+	</body>
+</html>

@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="auth.css">
+		<title>Прокат-СЕРВИС</title>
+	<script>
+		function sendData() {
+			var a = parseInt(document.getElementById('email').value);
+			var b = parseInt(document.getElementById('pwd').value);
+			            var action = document.getElementById('btn1').value;
+			alert("fdfd");
+		}
+		function f1(){
+			let myObj = document.getElementById('email');
+			myObj.style.borderBottom = '1px solid #A4A6A9';
+			let myObj2 = document.getElementById('first-feedback');
+			myObj2.style.display = 'none';
+		}
+		function f2(){
+			let myObj3 = document.getElementById('pwd');
+			myObj3.style.borderBottom = '1px solid #A4A6A9';  
+			let myObj4 = document.getElementById('second-feedback');
+			myObj4.style.display = 'none';   
+		}
+
+
+	</script>
+
+
+	</head>
+	<body>
+	        <header>
+			<div class="subscribe">Подпишись!</div>
+			<div class="social"><img src="twit.svg"></div>
+			<div class="social"><img src="YouTube.svg"></div>
+			<div class="social"><img src="face.svg"></div>
+
+	        </header>
+	        <main>
+		<div class="top_menu">
+			<div class="logo"><img src="logo.svg"></div>
+		</div>
+		<div class="content">
+			<div class="fields">
+				<div class="login_caption">Вход</div>
+				<form name='myform' class="needs-validation"  novalidate>
+					<div id="txt">
+						<input id="email" type="text" name="mail"  class="form-control"  onfocus="f1();"  placeholder="Email" style="width: 263px;" required/>
+						<div id="first-feedback" class="invalid-feedback">
+							Введите Email.
+						</div>
+					</div>
+					<div id="txt">
+						<input id="pwd" type="password" name="p1" class="form-control" onfocus="f2();" placeholder="Пароль" style="width: 263px;" required/>
+							<div id="second-feedback" class="invalid-feedback">
+								Введите пароль.
+							</div>
+					</div>
+					<div style="margin-bottom: 14px;"><input id="btn1" type="submit" name="btn" class="form-control" style="width: 263px;"value="Войти" required/></div>
+					<div class="rememder">
+						<div><input id="chb1" type="checkbox" name="saveme"/></div>
+						<div><label for="chb1">Запомнить меня.</label></div>
+						<div class="recovery">Забыли пароль?</div>
+					</div>
+				</form>
+				<div class="registration">Еще не с нами? <span class="login">Зарегистрируйтесь</span></div>
+			</div>
+		</div>
+	        </main>
+    <script>
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                   
+                  if (form.checkValidity() === true) {
+                    sendData();
+	}                          
+	else{
+		let myObj = document.getElementById('email');
+		myObj.style.borderBottom='1px solid #C43269';	
+		let myObj2 = document.getElementById('first-feedback');
+		myObj2.style.display = 'flex';
+		let myObj3 = document.getElementById('pwd');
+		myObj3.style.borderBottom = '1px solid #C43269';  
+ 		let myObj4 = document.getElementById('second-feedback');
+		myObj4.style.display = 'flex';   
+	}
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+    </script>       
+	</body>
+</html>
