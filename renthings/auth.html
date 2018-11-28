@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="auth.css">
+		<title>Прокат-СЕРВИС</title>
+	<script>
+		function sendData() {
+			var a = parseInt(document.getElementById('email').value);
+			var b = parseInt(document.getElementById('pwd').value);
+			            var action = document.getElementById('btn1').value;
+			alert("Запрос отправлен!");
+		}
+
+	</script>
+
+
+	</head>
+	<body>
+	        <header>
+			<div class="subscribe">Подпишись!</div>
+			<div class="social"><img src="twit.svg"></div>
+			<div class="social"><img src="YouTube.svg"></div>
+			<div class="social"><img src="face.svg"></div>
+
+	        </header>
+	        <main>
+		<div class="top_menu">
+			<div class="logo"><img src="logo.svg"></div>
+		</div>
+		<div class="content">
+			<div class="fields">
+				<div class="login_caption">Вход</div>
+				<form name='myform' class="needs-validation"  novalidate>
+					<div id="txt">
+						<input id="email" type="email" name="mail"  class="form-control" placeholder="Email" style="width: 263px;" required/>
+						<div class="invalid-feedback">
+							Введите Email.
+						</div>
+					</div>
+					<div id="txt">
+						<input id="pwd" type="password" name="p1" class="form-control" placeholder="Пароль" style="width: 263px;" required/>
+							<div class="invalid-feedback">
+								Введите пароль.
+							</div>
+					</div>
+					<div style="margin-bottom: 14px;"><input id="btn1" type="submit" name="btn" style="width: 263px;"value="Войти" required/></div>
+					<div class="rememder">
+						<div class = "checkbox"><input id="chb1"  type="checkbox" name="saveme"/></div>
+						<div><label for="chb1">Запомнить меня.</label></div>
+						<div class="recovery"><a href="#">Забыли пароль?</a></div>
+					</div>
+				</form>
+				<div class="registration">Еще не с нами? <a href="reg.html">Зарегистрируйтесь</a></div>
+			</div>
+		</div>
+	        </main>
+    <script>
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                   
+                  if (form.checkValidity() === true) {
+                    sendData();
+	  	  }                          
+	          form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+    </script>       
+	</body>
+</html>
