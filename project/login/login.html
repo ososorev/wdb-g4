@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="my.css" type="text/css"/>
+</head>
+<body>
+    <header class="d-flex justify-content-end text-white py-1 px-5" >
+        <div class="d-flex align-items-center">
+            <span>Подпишись!</span>
+            <a href="#" class="badge badge-custom">
+                <img src="../svg/Twitter.svg" rel="Twitter">
+            </a>
+            <a href="#" class="badge badge-custom">
+                <img src="../svg/YouTube.svg" rel="YouTube">
+            </a>
+            <a href="#" class="badge badge-custom">
+                <img src="../svg/Facebook.svg" rel="Facebook">
+            </a>
+        </div>
+    </header>
+    <nav class="navbar px-5 navbar-light bg-white shadow-sm">
+        <a class="navbar-brand" href="#">
+            <img src="../svg/logo.svg" alt="Renthings"/>
+        </a>
+    </nav>
+    
+    <main class="py-4">
+        <form class="mx-auto py-4 bg-white shadow-sm rounded" style="max-width: 700px">
+            <fieldset class="mb-4 mx-auto text-center" style="max-width:300px">
+                <legend class="mb-5">Вход</legend>
+                
+                <div class="d-flex flex-column align-items-center mb-5">
+                    <span class="mb-3">С ПОМОЩЬЮ</span>
+                    <div class="d-flex flex-wrap">
+                        <div class="mb-4">
+                            <a href="#" class="badge badge-white">
+                                <img src="../svg/vk.svg" rel="Facebook">
+                            </a>
+                            <a href="#" class="badge badge-white">
+                                <img src="../svg/fb.svg" rel="Facebook">
+                            </a>
+                            <a href="#" class="badge badge-white">
+                                <img src="../svg/gmail.svg" rel="Facebook">
+                            </a>
+                        </div>
+                            <div class="mx-auto w-50 border-bottom"></div>
+                    </div>    
+                </div>
+                
+                <div>ИЛИ ИСПОЛЬЗУЯ EMAIL</div>
+                <div class="form-group">
+                    <input type="email" class="form-control-plaintext border-bottom" placeholder="Email"/>
+                    <div class="invalid-feedback">Введите email</div>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control-plaintext border-bottom" placeholder="Пароль"/>
+                    <div class="invalid-feedback">Введите пароль</div>
+                </div>
+                    
+                <button type="submit" class="btn btn-block btn-custom-primary mb-3">Войти</button>
+                
+                <div class="form-group d-flex flex-wrap justify-content-between">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="FormRememberMe"/>
+                        <label class="custom-control-label" for="FormRememberMe">Запомнить меня</label>
+                    </div>
+                    <a href="" class="text-custom-primary">Забыли пароль?</a>
+                </div>
+            </fieldset>
+            <div class="d-flex flex-wrap justify-content-center">
+                <span class="mr-2">Еще не с нами?</span>
+                <a href="#" class="text-custom-primary">Зарегистрируйтесь</a>
+            </div>
+        </form>
+    </main>
+<!--     <script src="registry.js" async></script> -->
+</body>
+</html>
