@@ -7,36 +7,195 @@
 		<title>Авторизация</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
+	    <script>
+		</script>
 	</head>
 	<body>
     <header>
+	  <div class="header">
+	  </div>
+<!--	  
       <div class="subscription">
-        <p> Подпишись! </p>
-        <a class="soc_net" title="Twitter" href="https://twitter.com"> <img src="image/twitter.png" alt="twitter"> </a>
-        <a class="soc_net" title="YouTube" href="https://www.youtube.com"> <img src="image/youtube.png" alt="youtube"> </a>
-        <a class="soc_net" title="Facebook" href="https://www.facebook.com/"> <img src="image/faсebook.png" alt="facebook"> </a>
-        <a class="soc_net" title="" href=""> <img src="image/like.png" alt="like"> </a>
+	  	  <a title="" href="">
+		    <img src="image/like.png" alt="like">
+		  </a>
+		  <a title="Facebook" href="https://www.facebook.com/">
+ 		    <img src="image/faсebook.png" alt="facebook"> 
+		  </a>
+		  <a title="YouTube" href="https://www.youtube.com">
+		    <img src="image/youtube.png" alt="youtube">
+		  </a>
+		  <a title="Twitter" href="https://twitter.com">
+		    <img src="image/twitter.png" alt="twitter">
+		  </a>
+          <div> Подпишись! </div>
+	  </div>
+	  <div class="logo"> 
+         <a href="">
+		 <img src="image/renthings.png" alt="renthings">
+ 	     </a>
       </div>
-         <a class="logo" href=""> <img src="image/renthings.png" alt="renthings"> </a>
-      </header>
+	  -->
+	  </header>
     <article>
-      <div class="mainform">
-        <p class="headline">
+
+      	
+<!--      <div class="mainform">
+        <div class="headline">
          Вход
-        </p>
+        </div>
+
         <form metod="post">
-          <p><input autocomplete="off" required  placeholder="Email" type="text" name="email"></p>
-          <p><input autocomplete="off" required placeholder="Пароль" type="text" name="password"></p>
-          <p><button formaction="handler.php" value="log_in" name="button" type="submit">Войти</button></p>
-          <p class="checked"><input checked type="checkbox" name="remember"> запомнить меня 
-            <a class="indent" href="recovery.html"> Забыли пароль? </a> </p>
+          <div><input autocomplete="off" required  placeholder="Email" type="text" name="email"></div>
+          <div><input autocomplete="off" required placeholder="Пароль" type="text" name="password"></div>
+          <div><button formaction="handler.php" value="log_in" name="button" type="submit" onclick="test1();">Войти</button></div>
+          <div class="checked"><input  type="checkbox" name="remember"> запомнить меня 
+            <a class="indent" href="recovery.html"> Забыли пароль? </a> </div>
         </form>
         <div><br><br>
-          <p Class="medium_text"> Еще не с нами? <a Class="medium_text" href="index.html"> Зарегистрируйтесь</a></p>
+          <div Class="bottom_text"> Еще не с нами? <a href="index.html" > Зарегистрируйтесь</a></div>
           <br>
         </div>
-       
-      </div>
+	  </div>
+       -->
+
+
+      <div class="mainform">
+	  </div>
+
+	   
+	      <script>
+		  
+//заголовок
+			let div0=creat_div("subscription");
+			div0.appendChild(creat_a(" ", null, " ")).appendChild(creat_img("image/like.png", "like"));
+			div0.appendChild(creat_a("https://www.facebook.com", null, "Facebook")).appendChild(creat_img("image/faсebook.png", "Facebook"));
+			div0.appendChild(creat_a("https://www.youtube.com", null, "YouTube")).appendChild(creat_img("image/youtube.png", "YouTube"));
+			div0.appendChild(creat_a("https://twitter.com", null, "Twitter")).appendChild(creat_img("image/twitter.png", "Twitter"));
+		    div0.appendChild(creat_div(null, "Подпишись!"));
+			
+		    document.querySelector(".header").appendChild(div0);
+			document.querySelector(".header").appendChild(creat_div("logo")).appendChild(creat_img("image/renthings.png", "renthings"));
+			
+// Основная форма
+			document.querySelector(".mainform").appendChild(creat_div("headline", "Вход"));		  
+			let res_creat_form1=creat_form("post");
+
+//поля и кнопка		
+			let res_creat_input1=creat_input("off", "required", "Email", "text", "email");
+			let res_creat_input2=creat_input("off", "required", "Пароль", "text", "password");
+			let res_creat_button1=creat_button("handler.php", "log_in", "button", "submit", "Войти");
+	
+			res_creat_form1.appendChild(creat_div()).appendChild(res_creat_input1);
+			res_creat_form1.appendChild(creat_div()).appendChild(res_creat_input2);
+    		res_creat_form1.appendChild(creat_div()).appendChild(res_creat_button1);
+			
+// чекбокс и востановление			
+			let res_creat_div1=creat_div("checked", null);
+			let res_creat_input3=creat_input(null, null, null, "checkbox", "remember");
+			res_creat_div1.appendChild(res_creat_input3);
+			res_creat_div1.appendChild(creat_text("запомнить меня"));
+			res_creat_div1.appendChild(creat_a("recovery.html", "Забыли пароль?"));
+			res_creat_form1.appendChild(res_creat_div1);
+
+// вставка формы			
+			document.querySelector(".mainform").appendChild(res_creat_form1);
+
+// ссылка на регистрацию
+			let res_creat_div2=creat_div("bottom_text", "Еще не с нами? ");
+			
+			res_creat_div2.appendChild(creat_a("index.html", " Зарегистрируйтесь"))	
+			document.querySelector(".mainform").appendChild(res_creat_div2);		  
+
+
+//функции			
+			function creat_div(class_,txt_) {
+			  let creat_div = document.createElement("div");
+			  if(class_) {
+		  	    creat_div.classList.add(class_);
+			  };
+			  if(txt_) {
+			    creat_div.innerHTML = txt_;
+			  };
+			  return creat_div;
+			}
+		
+ 			function creat_form(method_) {
+			  let creat_form = document.createElement("form");
+			  creat_form.method = method_;
+			  return creat_form;
+			}
+		
+ 			function creat_input(autocomplete_, required_, placeholder_, type_, name_, txt_) {
+			  let creat_input = document.createElement("input");
+			  if(autocomplete_) {
+			    creat_input.autocomplete="off";
+				};
+			  if(required_) {
+			    creat_input.required = required_;
+				};
+			  if(placeholder_) {
+			    creat_input.placeholder = placeholder_;
+				};
+			  if(type_) {
+			    creat_input.type = type_;
+				};
+			  if(name_) {
+			    creat_input.name=name_;
+				};
+			  if(txt_) {
+			    creat_innerHTML=name_;
+				};				
+			  return creat_input;
+			}
+			
+ 			function creat_button(formaction_, value_, name_, type_, txt_) {
+			  let creat_button = document.createElement("button");
+			  if(formaction_) {
+				creat_button.formAction = formaction_;
+				};
+			  if(value_) {
+				creat_button.value = value_;
+				};
+			  if(name_) {
+				creat_button.name = name_;
+				};
+			  if(type_) {
+				creat_button.type = type_;
+				};
+			  if(txt_) {
+			    creat_button.innerHTML = txt_;
+				};
+			  return creat_button;
+			}		
+		
+		    function creat_text(text_){
+			  let creat_text = document.createTextNode(text_);
+			  return creat_text;
+			}
+			
+			function creat_a(href_, text_, title_){
+			  let creat_a = document.createElement("a");
+			  creat_a.href=href_;
+			  if(text_) {
+			    creat_a.innerHTML = text_;
+			    };
+			  if(title_) {
+			    creat_a.title = title_;
+				};
+			  return creat_a;
+			}
+			
+			function creat_img(src_, alt_){
+			  let creat_img = document.createElement("img");
+			  creat_img.src=src_;
+			  if(alt_) {
+			    creat_img. alt = alt_;
+			    };
+			  return creat_img;
+			}
+      </script>
+	  
     </article>
 	
 	</body>
