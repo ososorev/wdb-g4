@@ -115,10 +115,10 @@ Button:focus{
   padding-left: 11%;
 }
 
-.conditions {
+.conditions div{
   color: #4C4C4C;
-  font-size: 12px;
-  width: 262px;
+  font-size: 13px;
+  width: 260px;
   text-align: left;
   margin: 0 auto;
 
