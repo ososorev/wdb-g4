@@ -1,20 +1,53 @@
-removeForm();
-let fieldset=createFieldset();
-createLegend('Регистрация');
-createCheckInWithSocialNet();
-createCheckIn();
-createFormButton();
-createPolicies();
-createSignInOffer();
+// 'use strict';//h
+var signUpReference=document.getElementById("signUpReference");
+signUpReference.addEventListener("click" , buildFormSignUp);
 
+
+function buildFormSignUp(event){
+    event.preventDefault();
+    // clearForm(); 
+    removeForm();
+    let main=document.querySelector("main");
+    main.append(createForm());
+    
+    var submit = document.getElementById('submit');
+    submit.addEventListener("click",function(event){
+        event.preventDefault();
+        var formData = new FormData();
+        var email = document.getElementById('email').value;
+        formData.append('email', email);
+        var myInit = {
+            method: 'POST',
+            body: formData
+        }
+        fetch('signUp.php', myInit)
+            .then(function(response){return response.text();})
+            .then(function(result){document.getElementsByTagName('body')[0].innerHTML = result;});
+    });
+}
 
 //------------------------------------------------------
 function removeForm(){
+    let oldform=document.getElementsByTagName('form')[0];
+    oldform.remove ();
+}
+
+function createForm(){
+    let form=document.createElement("form");
+    form.classList.add("mx-auto","py-4","bg-white","shadow-sm","rounded","needs-validation");
+    form.style="max-width: 700px";
+    form.novalidate="true";
+    let fieldset=createFieldset();
+    form.append(fieldset);
+    form.append(createSignInOffer());
+    return form;
+}
+
+function clearForm(){
     let form=document.getElementsByTagName('form')[0];
     removeChildren(form);
 //    form.innerHTML='';
 }
-
 function removeChildren(elem){
     while (elem.lastChild){
         elem.removeChild(elem.lastChild);
@@ -26,15 +59,21 @@ function createFieldset(){
     let fieldset=document.createElement("fieldset");
     fieldset.classList.add("mb-4","mx-auto","text-center");
     fieldset.style="max-width:300px";
-    document.querySelector("form").append(fieldset);
+    fieldset.append(createLegend('Регистрация'));
+    fieldset.append(createCheckInWithSocialNet());
+    fieldset.append(createCheckInTitle());
+    fieldset.append(createCheckIn());
+    fieldset.append(createFormButton());
+    fieldset.append(createPolicies());
     return fieldset;
 }
 
 function createLegend(legendName){
     let legend=document.createElement('legend');
     legend.classList.add("mb-5");
-    fieldset.append(legend);
     legend.textContent=legendName;
+    return legend;
+//    fieldset.append(legend);
 }
 
 function createCheckInWithSocialNet(){
@@ -42,24 +81,27 @@ function createCheckInWithSocialNet(){
     socialNetWrapper.append(createSocialNetTitle("С ПОМОЩЬЮ"));
     socialNetWrapper.append(createSocialNetReferences());
     socialNetWrapper.append(createSocialNetBottomBoundary())
-    fieldset.append(socialNetWrapper);   
+    return socialNetWrapper;
+//    fieldset.append(socialNetWrapper);   
 }
 
 function createCheckIn(){
-    fieldset.append(createCheckInTitle());
     let checkInEmailWrapper=createCheckInEmailWrapper();
     checkInEmailWrapper.append(createCheckInEmailInput());
-    checkInEmailWrapper.append(createCheckInEmailValidate());    
-    fieldset.append(checkInEmailWrapper);
+    checkInEmailWrapper.append(createCheckInEmailValidate());   
+    return checkInEmailWrapper;
+//    fieldset.append(checkInEmailWrapper);
 }
 
 function createFormButton(){
     let formButton=document.createElement("button");
     formButton.classList.add("btn","btn-block","btn-custom-primary","mb-3");
     formButton.type="submit";
-    formButton.id="btnCheckIn";
+    formButton.id="submit";
     formButton.textContent="Зарегистрироваться";
-    fieldset.append(formButton);
+//    formButton.value="Зарегистрироваться";
+//    fieldset.append(formButton);
+    return formButton;
 }
 
 function createPolicies(){
@@ -69,15 +111,16 @@ function createPolicies(){
     policies.append(createReference("#","Условия пользования"));
     policies.innerHTML+=" и ";
     policies.append(createReference("#"," Политику конфиденциальности"));
-    fieldset.append(policies);
+    return policies;
+//    fieldset.append(policies);
 }
 
 function createSignInOffer(){
     let signInOffer=document.createElement("div");
     signInOffer.classList.add("text-center");
     signInOffer.textContent="Уже имеете аккаунт? ";
-    signInOffer.append(createReference("#","Выполните вход"));
-    document.querySelector("form").append(signInOffer);
+    signInOffer.append(createReference("signIn.html","Выполните вход"));
+    return signInOffer;
 }
 
 
@@ -92,7 +135,8 @@ function createReference(href,text){
 
 //------------------------------------------------------
 function createCheckInTitle(){
-    let title=document.createElement("span");
+    let title=document.createElement("div");
+    title.classList.add("mb-3");
     title.textContent="ИЛИ ИСПОЛЬЗУЯ EMAIL";
     return title;
 }
@@ -104,9 +148,11 @@ function createCheckInEmailWrapper(){
 }
 function createCheckInEmailInput(){
     let emailInput=document.createElement("input");
-    emailInput.classList.add("form-control-plaintext","border-bottom");
+    emailInput.classList.add("form-control");
     emailInput.type="email";
+    emailInput.id="email";
     emailInput.placeholder="Email";
+    emailInput.required="true";
     return emailInput;
 }
 function createCheckInEmailValidate(){
@@ -180,29 +226,3 @@ function createImg(imgSrc,imgName){
     image.rel=imgName;//!!!!!dont work
     return image;
 }
-
-//let divWelcome=createDiv();
-//createProfileLink();
-//createButton(divWelcome);
-
-//function createDiv(){
-//    let divWelcome=document.createElement("div");
-//    divWelcome.classList.add("welcome");
-//    document.querySelector(".myClass").append(divWelcome);
-//    return divWelcome;
-//}
-//
-//function createProfileLink(){
-//    let ProfileLink=document.createElement("a");
-//    ProfileLink.href="#";
-//    document.querySelector(".welcome").append(ProfileLink);
-//    ProfileLink.innerHTML="Ivan";
-//}
-//
-//function createButton(divWelcome){
-//    let but=document.createElement("button");
-//    divWelcome.append(but);
-//
-//    let text=document.createTextNode("Войти");
-//    but.append(text);
-//}

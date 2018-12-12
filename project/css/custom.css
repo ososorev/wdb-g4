@@ -67,3 +67,27 @@ a.text-custom-primary:hover, a.text-custom-primary:focus {
 .custom-control-input:focus ~ .custom-control-label::before {
   box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(86, 61, 124, 0.5);
 }
+
+.form-control {
+  border: 0;
+  border-bottom: 1px solid #ced4da;
+  border-radius: 0;
+  padding: 0.375rem 0; 
+}
+
+.form-control:focus {
+  border-color: #493567;
+  box-shadow: 0 0.2rem 0 0 rgba(86, 61, 124, 0.5);
+}
+
+.was-validated .form-control:valid:focus, .form-control.is-valid:focus, .was-validated
+.custom-select:valid:focus,
+.custom-select.is-valid:focus {
+  box-shadow: 0 0.2rem 0 0  rgba(40, 167, 69, 0.25);
+}
+
+.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus, .was-validated
+.custom-select:invalid:focus,
+.custom-select.is-invalid:focus {
+  box-shadow: 0 0.2rem 0 0 rgba(220, 53, 69, 0.25);
+}
