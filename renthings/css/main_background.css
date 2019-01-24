@@ -1,0 +1,23 @@
+body {
+  background: #F4F4F5;
+}
+
+.main_background {
+  display: flex;
+  justify-content: center;
+}
+
+.workspace_wrap {
+  margin: auto;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  min-width: 754px; 
+}
+
+.card_wrap {
+  background: #FFFFFF;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,226 @@
+<html>
+ <head>
+   <meta charset="utf-8" />
+   <title>Регистрация</title>
+   
+   <!-- Подключение Bootstrap -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+   
+   <link rel="stylesheet" href="style.css" />
+   
+    
+
+   
+ </head>
+ <body>
+  <header>
+    <!-- Панель подписок -->
+   <div class="subscribe_bar"> 
+     <div class="subscribe">
+       <div class="subscr_title"> Подпишись!</div>
+       <div class="subscr_img"><img src="img/twitter.svg" /> </div>
+       <div class="subscr_img"><img src="img/youtube.svg" /> </div>
+       <div class="subscr_img"><img src="img/facebook.svg" /> </div>
+     </div>
+   </div>
+    
+    <!-- Панель с логотипом -->
+   <div class="logo_bar"> 
+      <div class="logo">
+       <img src="img/logo.svg" />
+      </div>
+   </div>
+  </header>
+  <main class="main">
+    <!-- Форма регистрации на JS-->
+    
+    <script>
+      let resultWhiteWrap =   createWhiteWrap();
+      let resultRegForm =       createRegForm(resultWhiteWrap);
+      let resultFormTitle =       createFormTitle(resultRegForm);
+                                      createFormTitleText(resultFormTitle);
+      let resultFormMain =        createFormMain(resultRegForm);
+      let resultForm =                createForm(resultFormMain);
+                                         createUserDataForm();
+                                           createEmailLabel(); 
+                                           createEmailInput();
+                                           createEmailInvalidFeedback();
+                                         createDivButton(resultForm);
+                                           createButtonReg();
+                                         createChechBoxs(resultForm);
+                                           createPolicyLink();
+                                  createBottomLink(resultRegForm);
+
+    function createWhiteWrap() {
+      let whiteWrap = document.createElement("div");
+      whiteWrap.classList.add("white_wrap");
+      document.querySelector(".main").append(whiteWrap);
+      return whiteWrap;
+    }
+      
+    function createRegForm(resultWhiteWrap) {
+      let regForm = document.createElement("div");
+      regForm.classList.add("reg_form");
+      resultWhiteWrap.append(regForm);
+      return regForm;
+    }  
+      
+    function createFormTitle(resultRegForm) {
+      let formTitle = document.createElement("div");
+      formTitle.classList.add("form_title");
+      resultRegForm.append(formTitle);
+      return formTitle;
+    }
+    
+    function createFormTitleText(resultFormTitle) {
+      let formTitleText = document.createElement("p");
+      formTitleText.innerHTML = "Регистрация";
+      resultFormTitle.append(formTitleText);
+    } 
+    
+    function createFormMain(resultRegForm) {
+      let formMain = document.createElement("div");
+      formMain.classList.add("form_main");
+      resultRegForm.append(formMain);
+      return formMain;
+    }
+      
+    function createForm(resultFormMain) {
+      let form = document.createElement("form");
+      form.classList.add("needs-validation");
+      resultFormMain.append(form);
+      form.method='POST';
+      form.action='regist.php';
+      form.setAttribute("novalidate",""); 
+      return form;
+    }
+      
+    function createUserDataForm() {
+      let userDataForm = document.createElement("div");
+      userDataForm.classList.add("user_data");
+      document.querySelector("form").append(userDataForm);
+    }
+    
+    function createEmailLabel() {
+      let emailLabel = document.createElement("label");
+      emailLabel.for = "eml";
+      emailLabel.innerHTML = "Email";
+      emailLabel.style.display = "none";
+      document.querySelector(".user_data").append(emailLabel);
+    }  
+      
+    function createEmailInput() {
+      let emailInput = document.createElement("input");
+      emailInput.classList.add("form-control", "border-top-0", "border-right-0", "border-left-0", "rounded-0");
+      emailInput.id="eml";
+      emailInput.type="email"; 
+      emailInput.name="email";
+      emailInput.placeholder="E-Mail";
+      emailInput.setAttribute("required","");
+      document.querySelector(".user_data").append(emailInput);
+    }  
+      
+    function createEmailInvalidFeedback() {
+      let emailInvalidFeedback = document.createElement("div");
+      emailInvalidFeedback.classList.add("invalid-feedback");
+      emailInvalidFeedback.innerHTML = "Введите адрес электронной почты!";
+      document.querySelector(".user_data").append(emailInvalidFeedback);
+      }  
+      
+    function createDivButton(resultForm) {
+      let divButton = document.createElement("div");
+      divButton.classList.add("button");
+      resultForm.append(divButton);
+    }
+      
+    function createButtonReg() {
+      let buttonReg = document.createElement("button");
+      buttonReg.classList.add("btn-block");
+      buttonReg.type="submit";
+      buttonReg.innerHTML="Зарегистрироваться";
+      document.querySelector(".button").append(buttonReg);
+    } 
+      
+    function createChechBoxs(resultForm) {
+      let checkBoxs = document.createElement("div");
+      checkBoxs.classList.add("check_boxs");
+      resultForm.append(checkBoxs);
+    }  
+      
+    function createPolicyLink() {
+      let policyLink = document.createElement("div");
+      policyLink.classList.add("policy");
+      policyLink.innerHTML="Регистрируясь, вы подтверждаете, что принимаете <a href=''>Условия пользования</a> и <a href=''>Политику конфиденциальности</a>";
+      document.querySelector(".check_boxs").append(policyLink);
+    }  
+      
+    function  createBottomLink(resultRegForm) {
+      let bottomLink = document.createElement("div");
+      bottomLink.classList.add("bottom_link");
+      resultRegForm.append(bottomLink);
+      bottomLink.innerHTML = "Уже имеете аккаунт? <a href=''>Войдите</a>";
+    }  
+          
+    </script>       
+  </main>
+   
+   <script>
+      function fetchData(event) {
+        event.preventDefault();
+        var form = document.querySelector('form');
+      
+        fetch('regist.php', {
+            method: "POST",
+            body: new FormData(form),
+          }).then(response=>{
+            return response.text();
+          }).then(text => {
+            if (text == "User with the same name already exists") {
+            document.querySelector(".invalid-feedback").replaceWith(text);
+            document.querySelector(".invalid-feedback").style.display = "inline";
+            }
+           else {
+             goto_email_confirm();
+//              createConfirmEmailText();
+//              createConfirmEmailButton(); 
+           }
+        });
+         return false;
+      }
+      
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            else {
+              fetchData(event);
+            }  
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+      
+   function goto_email_confirm() {
+      document.querySelector(".form_title").innerHTML = "<p>Подтверждение</p>";
+      document.querySelector('form').style.display="none";
+      document.querySelector(".bottom_link").style.display="none";
+    }  
+
+    </script>
+
+  <!-- Подключение Bootstrap --> 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+ </body>  
+</html>

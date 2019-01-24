@@ -1,0 +1,100 @@
+ <html>
+ <head>
+   <meta charset="utf-8" />
+   <title>Вход в аккаунт</title>
+   
+   <!-- Подключение Bootstrap -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+   
+   <link rel="stylesheet" href="./css/style.css" />
+   
+   <script src="./js/loginGetUserDataAJAX.js"></script>
+   <script src="./js/showUserSessionID.js"></script>  
+ </head>
+ <body>
+  <header>
+    <!-- Панель подписок -->
+   <div class="subscribe_bar"> 
+     <div class="subscribe">
+       <div class="subscr_title"> Подпишись!</div>
+       <div class="subscr_img"><img src="img/twitter.svg" /> </div>
+       <div class="subscr_img"><img src="img/youtube.svg" /> </div>
+       <div class="subscr_img"><img src="img/facebook.svg" /> </div>
+     </div>
+   </div>
+    
+    <!-- Панель с логотипом -->
+   <div class="logo_bar"> 
+      <div class="logo">
+       <img src="img/logo.svg" />
+      </div>
+   </div>
+  </header>
+  <main class="main">
+    <!-- Форма входа -->
+   <div class="white_wrap">  
+     <div class="reg_form">
+       <div class="form_title">
+         <p>Вход</p>
+
+       </div>
+       <div class="form_main">
+        <form action="./php/login.php" method="POST" class="needs-validation" novalidate>
+            <div class="user_data">
+                <div class="email">
+                  <label for="eml">Email</label>
+                  <input type="email" 
+                         class="form-control border-top-0 border-right-0 border-left-0 rounded-0" 
+                         id="eml" name="email" placeholder="E-mail" required>
+                  <div class="invalid-feedback">
+                      Введите адрес электронной почты!
+                  </div>
+                </div>
+                <div class="pass">
+                  <label for="pss">Пароль</label>
+                  <input type="password" 
+                         class="form-control border-top-0 border-right-0 border-left-0 rounded-0" 
+                         id="pss" name="pass" placeholder="Пароль" required>
+                  <div class="invalid-feedback">
+                      Введите пароль!
+                  </div>
+                  
+                    <div class="for_fetch_data"> </div>
+                                    
+                </div>
+             </div>
+
+          <div class="button">
+            <button class="btn-block" type="submit">Войти</button>
+          </div>
+
+
+            <div class="check_boxs">
+              <div class="ch-box custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Запомнить меня</label>
+              </div>
+              <div class="forgot_pass">
+                 <a href="">Забыли пароль?</a>
+              </div>
+            </div> 
+          </form>
+        </div>
+        <div class="bottom_link">
+          Еще не с нами? <a href="regist.html">Зарегистрируйтесь</a>
+          <a href="responseForm.html">RespForm</a>
+          <a href="allRequests.html">AllReq</a>
+       </div>
+
+
+     </div>
+   </div>
+  </main>
+   
+  <!-- Подключение Bootstrap --> 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+ </body>  
+</html>
+

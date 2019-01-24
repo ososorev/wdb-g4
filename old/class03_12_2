@@ -1,0 +1,11 @@
+let obj={
+  field:value1,
+  field:value2,
+  method:function(p1) {
+  тело ;
+  return рез-т;
+  }
+}
+
+obj.field1
+obj.method();

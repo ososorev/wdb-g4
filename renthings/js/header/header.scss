@@ -1,0 +1,118 @@
+
+
+.header {
+  
+  .subscribe_background {
+     background: #100E2D;
+     width: 100%;
+     height: 30px;
+  }    
+  
+  .subscribe_bar {
+    max-width: 905px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: inherit;
+  }
+  .subscribes {
+     display: flex;
+     align-items: center;
+  }
+  
+  .subscr_title {
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-right: 16px;
+  }
+
+  .subscr_img {
+    margin-right: 25px; 
+  }
+  
+  
+  .navigation_background {
+    width: 100%;
+    height: 60px;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 4px rgba(94, 99, 102, 0.15);
+    
+      .navigation_bar {
+        max-width: 905px;
+        margin: 0 auto;
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .logo {
+          height: inherit;
+          display: flex;
+          
+        }
+        
+        .tabs {
+          display: flex;
+          font-size: 16px;
+          color: #4C4C4C;
+          height: inherit;
+          
+          .all_requests {
+            height: inherit;
+            width: 109px;
+            font-weight: bold;
+            color: #7B3CA5;
+            border-color: #7B3CA5;
+            border-bottom-width: 3px;
+            border-style: solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
+          .my_requests {
+            margin-left: 30px;
+            height: inherit;
+            width: 109px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .my_response {
+            margin-left: 10px;
+            height: inherit;
+            width: 109px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
+        }
+        
+        .profile {
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          color: #1F2836;
+          height: inherit;
+          
+          .my_location_icon {
+            display: flex;
+            align-items: center;
+          }
+          
+          .user_profile {
+            display: flex;
+            align-items: center;
+            margin-left: 40px;
+            margin-right: 25px;
+          }
+          
+        }
+      }
+  }
+  
+  
+  
+}

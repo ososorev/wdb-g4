@@ -1,0 +1,29 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ososorev/wdb-g4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ososorev/wdb-g4/issues"
+  },
+  "homepage": "https://github.com/ososorev/wdb-g4#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.10.3",
+    "sass": "^1.15.3"
+  },
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-router-dom": "^4.3.1"
+  }
+}

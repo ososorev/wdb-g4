@@ -1,0 +1,185 @@
+body {
+  background: #F4F4F5;
+}
+
+button {
+  background: #7B3CA5;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+  color: #F2F2F2;
+  border-color: #7B3CA5;
+  border-style: solid;
+  outline: none !important;
+  }
+
+input {
+/*   outline: none !important;
+  border-style: hidden !important; */
+  box-shadow: none !important;
+}
+
+form > div {
+  margin-bottom: 10px;
+}
+
+
+/* Панель подписок */
+/* .form-control {
+  border-radius: 0 !important;
+} */
+
+.subscribe_bar {
+  width: 100%;
+  height: 30px;
+  left: 0px;
+  top: 0px;
+  background: #100E2D;
+  
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.subscribe {
+  display: inline-flex;
+  justify-content: flex-start;
+  flex-basis: 28%;
+}
+.subscr_title {
+  flex-basis: 21%;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 12px;
+  color: #FFFFFF;
+}
+
+.subscr_img {
+  flex-basis: 12%; 
+}
+
+
+/* Экран с логотипом */
+.logo_bar {
+  width: 100%;
+  height: 60px;
+  left: 0px;
+  top: 30px;
+  background: #FFFFFF;
+  
+  box-shadow: 0px 3px 4px rgba(94, 99, 102, 0.15);
+  
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.logo {
+  
+  flex-basis: 70%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+
+}
+
+.white_wrap {
+  background: #FFFFFF;
+  border-radius: 4px;
+  display: flex;
+  flex-basis: 558px;
+  justify-content: center;
+  align-content: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.reg_form {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 263px;
+  margin: 25px auto;
+ }
+
+.form_title {
+  display: flex;
+  justify-content: center;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  font-size: 24px;
+  color: #4C4C4C;
+
+}
+
+.form_main {
+  
+} 
+
+.user_data {
+
+}
+
+.email {
+  
+}
+
+.inv {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
+
+.check_boxs {
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-control-label {
+  line-height: 2em;
+}
+
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.forgot_pass {
+  
+}
+
+.bottom_link {
+  text-align: center;
+  font-size: 14px;
+}
+
+
+@media (min-width: 100px){
+  .user_data > div > label{
+    display: none;
+  }  
+}
+/* @media (max-width: 600px) {
+  .subscribe_bar {
+    display: none;
+  }
+  .white_wrap{
+    flex-basis: 100%;
+  }
+  .reg_form {
+    flex-basis: 100%;
+  }
+  .check_boxs {
+    flex-direction: column;
+    font-size: 20px;
+  }
+}   */

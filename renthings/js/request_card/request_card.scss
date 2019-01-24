@@ -1,0 +1,65 @@
+$prime-color: #4C4C4C;
+
+.open_request_card {
+  
+  .request_wrap {
+    
+    .drop_down_menu {
+      display: flex;
+      justify-content: flex-end;
+      padding: 2px 24px 1px 0px;
+      font-size: 30px;
+      color: #A4A6A9;
+    }
+    
+    .request_data {
+      width: 85%;
+      margin: auto;
+      
+      .title {
+        font-size: 22px;
+        color: $prime-color;
+      }
+      
+      .description {
+        margin-top: 20px;
+        
+        .description_text {
+          font-size: 14px;
+          color: $prime-color;
+        }
+      }
+      
+      .dates {
+        margin-top: 20px;
+      }
+      
+      .price {
+        margin-top: 20px;
+      }
+      
+      .label {
+        font-size: 14px;
+        color: #A4A6A9; 
+      }
+      
+      .text {
+        font-size: 17px;
+        color: $prime-color;
+      }
+    }
+    
+    .request_owner {
+      display: flex;
+      width: 85%;
+      margin: auto;
+      margin-top: 20px;
+    }
+  }
+  
+  .map {
+    margin-top: 20px;
+    width: 100%;
+    height: 220px;
+  }
+}

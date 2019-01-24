@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <header>
+    
+    </header>
+    
+    <div class="content">
+      
+    </div>
+    
+    <script>
+      createWelcomeDiv();
+      
+      createProfileLink();
+      
+      createButton();
+      
+      node=document.createElement("a");
+      node.href="#";
+      document.querySelector(".welcome").append(node);
+      document.querySelector("a").innerHTML="Иван Второй";
+      
+      node.innerHTML="Иван";
+      
+      let p=document.createTextNode("Войти");
+      node.append(p);
+      
+      function createProfileLink() {
+        node=document.createElement("a");
+        node.setAttribute("href", "#");
+        document.querySelector(".welcome").append(node);
+        document.querySelector("a").innerHTML="Иван";
+      }
+      
+      function createWelcomeDiv() {
+        let node=document.createElement("div");
+        node.classList.add ("welcome");
+        document.querySelector(".content").append(node);
+      }
+      
+      function createButton() {
+        node=document.createElement("button");
+        node.classList.add ("enter");
+        document.querySelector(".welcome").append(node);
+        document.querySelector("button").innerHTML="Войти";
+      }
+      
+      
+      
+    </script>
+  </body>
+</html>

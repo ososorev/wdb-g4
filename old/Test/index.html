@@ -1,0 +1,41 @@
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Пользователи</title>
+ </head>
+ <body>
+   <p>Привет!</p>
+   
+   <p>Создание пользователя</p>
+   <form method="POST" action="handler.php">
+     <input type="text" placeholder="Имя пользователя" name="username" />
+     <input type="password" placeholder="Пароль" name="password" />
+     <input type="hidden" name="marker" value="insert" />
+     <input type="submit" value="Создать пользователя" />
+   </form>
+   
+   <p>Удаление пользователя</p>
+   <form method="POST" action="handler.php">
+     <input type="text" placeholder="Имя пользователя" name="username" />
+     <input type="hidden" name="marker" value="delete" />
+     <input type="submit" value="Удалить пользователя">     
+   </form>
+   
+   <p>Изменение имени пользователя</p>
+   <form method="POST" action="handler.php">
+     <input type="text" placeholder="Имя пользователя" name="username" />
+     <input type="text" placeholder="Новое имя пользователя" name="new_username" />
+     <input type="hidden" name="marker" value="update" />
+     <input type="submit" value="Изменить имя пользователя">     
+   </form>
+   
+   <p>Поиск данных в БД по вхождению в имя пользователя</p>
+    <form method="POST" action="handler.php">
+     <input type="text" placeholder="Имя пользователя" name="username" />
+     <input type="hidden" name="marker" value="select" />
+     <input type="submit" value="Найти пользователя">     
+   </form>
+   
+   
+ </body>
+</html>
